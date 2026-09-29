@@ -174,6 +174,31 @@
       font-size: 14px;
       line-height: 1.6;
     }
+    .proof-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      border: 1px solid rgba(42, 248, 255, 0.28);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: rgba(42, 248, 255, 0.28);
+      box-shadow: var(--shadow);
+    }
+    .proof-item { background: #070b0c; padding: 22px 18px; text-align: center; }
+    .proof-number { color: var(--accent); font-size: 25px; font-weight: 750; line-height: 1.15; }
+    .proof-label { color: var(--ink); font-size: 15px; font-weight: 750; margin-top: 7px; line-height: 1.35; }
+    .delivery-model { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 24px; }
+    .delivery-step { border-left: 2px solid var(--accent); padding: 4px 14px; }
+    .delivery-step strong { display: block; font-size: 14px; margin-bottom: 5px; }
+    .delivery-step span { color: var(--muted); font-size: 13px; line-height: 1.45; }
+    .case-kicker { color: var(--accent); font-size: 11px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
+    .case-result { color: var(--ink) !important; font-weight: 650; margin-top: 14px !important; }
+    .hero-cta { margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .cta-secondary { display: inline-block; border: 1px solid rgba(255,255,255,.22); color: var(--ink); padding: 13px 22px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px; }
+    .cta-secondary:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+    @media (max-width: 760px) {
+      .proof-bar, .delivery-model { grid-template-columns: repeat(2, 1fr); }
+    }
 
     .case-studies {
       display: grid;
@@ -341,9 +366,9 @@
         <img class="avatar" src="imgs/photo.jpeg" alt="Egor Folley photo" />
         <div class="header-text">
           <h1 class="name">EGOR FOLLEY</h1>
-          <div class="role-title">Helping enterprise customers with agentic AI transformation</div>
+          <div class="role-title">Forward-Deployed AI Engineer for enterprise teams</div>
           <p class="tag" style="text-align: left;">
-            I help enterprise to find the expensive bottleneck, design AI solutions, and ship production-level systems. Built to be trusted with high-stakes decisions: governance, evals, and observability from day one.
+            I partner with business and technology leaders to turn high-cost workflows into governed AI systems that teams can operate—with measurable ROI, evaluation gates, and observability from day one.
           </p>
           <nav class="contact" aria-label="Social links">
             <a class="pill" href="https://linkedin.com/in/efolley" target="_blank" rel="noopener" aria-label="Egor Folley on LinkedIn">
@@ -359,15 +384,68 @@
               <span class="sr-only">GitHub</span>
             </a>
           </nav>
+          <div class="hero-cta">
+            <a class="cta" href="#contact">Discuss a workflow</a>
+            <a class="cta-secondary" href="#work">View selected work</a>
+          </div>
         </div>
       </div>
     </header>
+
+    <div class="proof-bar" aria-label="Selected credentials">
+      <div class="proof-item"><div class="proof-number">Lead FDE</div><div class="proof-label">for a $2M AI transformation</div></div>
+      <div class="proof-item"><div class="proof-number">12+</div><div class="proof-label">agentic projects shipped</div></div>
+      <div class="proof-item"><div class="proof-number">2X</div><div class="proof-label">AI founder</div></div>
+    </div>
+
+    <!-- CASE STUDIES -->
+    <section id="work">
+      <h2>Selected Work</h2>
+      <div class="case-studies">
+
+        <div class="case-study">
+          <div class="case-kicker">Private equity · AI transformation</div>
+          <h3 style="color: var(--accent);">Enterprise AI for PE Deal Diligence</h3>
+          <p><strong>Owned:</strong> discovery, architecture, evaluation design, and production handoff for a $2M program and team of 8.</p>
+          <p>Built a six-agent, ontology-first system over unstructured diligence materials, with governed retrieval and GraphRAG.</p>
+          <p class="case-result">Outcome: diligence reduced from ~4 months to ~1 hour.</p>
+          <p style="margin-top: 10px; font-size: 13px;">Architecture write-up available on request.</p>
+        </div>
+
+        <div class="case-study">
+          <div class="case-kicker">Enterprise knowledge operations</div>
+          <h3 style="color: var(--accent);">Agentic GraphRAG Copilot for Cross-Team Data Retrieval</h3>
+          <p><strong>Problem:</strong> operational teams were losing hours locating reliable information across documents, databases, and internal tools.</p>
+          <p>Designed a GraphRAG copilot with source-grounded retrieval and regression evaluation.</p>
+          <p class="case-result">Outcome: cross-team data-retrieval time reduced by ~82%.</p>
+          <p style="margin-top: 10px; font-size: 13px;">Architecture write-up available on request.</p>
+        </div>
+
+        <div class="case-study">
+          <div class="case-kicker">Change adoption · manager enablement</div>
+          <h3 style="color: var(--accent);">All-in-One Agentic Platform for Managers</h3>
+          <p><strong>Problem:</strong> managers took weeks to adopt new tools and navigate fragmented internal knowledge.</p>
+          <p>Built a multi-agent platform connecting documentation, project data, and internal tools around their daily workflow.</p>
+          <p class="case-result">Outcome: technology-adoption time cut from 6 weeks to 3.</p>
+          <p style="margin-top: 10px; font-size: 13px;">Architecture write-up available on request.</p>
+        </div>
+
+        <div class="case-study">
+          <div class="case-kicker">Founder-built · construction safety</div>
+          <h3 style="color: var(--accent);">Vision AI Agent for Jobsite Safety</h3>
+          <p>Built my second AI startup: a multi-agent vision system for construction-site inspection and incident triage. The MVP is complete; production hardening is underway.</p>
+          <p class="case-result">Outcome: ~15 hours/week returned to safety supervisors.</p>
+          <p style="margin-top: 10px; font-size: 13px;"><a href="https://www.youtube.com/watch?v=3Mo-gH-o2K8" target="_blank">View BuiltWorlds demo →</a></p>
+        </div>
+
+      </div>
+    </section>
 
     <!-- ABOUT / BACKGROUND -->
     <section>
       <h2>Background</h2>
       <p class="lead">
-        Over the past <strong>7+ years</strong> I've been engineering AI/ML architectures, partnering with enterprise stakeholders to solve high-impact problems, and deliver ROI-driven solutions.
+        Over the past <strong>7+ years</strong>, I have worked with enterprise stakeholders to discover high-value problems, align technical and business owners, and deliver measurable AI outcomes.
       </p>
 
       <p class="lead"><strong>Built 2 AI startups:</strong></p>
@@ -377,47 +455,28 @@
       </ul>
 
       <p class="lead">
-        Delivered <strong>12+ production GenAI E2E deployments</strong> for startups, SMBs, and enterprises: from customer discovery using MEDDPICC, solution architecture, technical implementation and deployment, and user adoption.
+        Delivered <strong>12+ end-to-end GenAI systems</strong> for startups, SMBs, and enterprises—from customer discovery and solution architecture through production deployment, adoption, and handoff.
       </p>
+
+      <div class="delivery-model" aria-label="Engagement model">
+        <div class="delivery-step"><strong>1. Discover</strong><span>Align business, technical, and risk owners around one expensive workflow.</span></div>
+        <div class="delivery-step"><strong>2. Baseline</strong><span>Define the current cost, cycle time, quality bar, and success measures.</span></div>
+        <div class="delivery-step"><strong>3. Ship</strong><span>Build the thin production path: retrieval, controls, evaluations, and tracing.</span></div>
+        <div class="delivery-step"><strong>4. Hand off</strong><span>Leave owners with runbooks, evaluation gates, and an adoption plan.</span></div>
+      </div>
     </section>
 
-    <!-- CASE STUDIES -->
+    <!-- TECHNICAL SKILLS -->
     <section>
-      <h2>Selected Work</h2>
-      <div class="case-studies">
-
-        <div class="case-study">
-          <h3 style="color: var(--accent);">Enterprise AI for PE Deal Diligence</h3>
-          <p>Led a $2M engagement and a team of 8 to cut private-equity due diligence from ~4 months to ~1 hour. A 6-agent, ontology-first pipeline over 400+ pages of unstructured documents, with agent governance and GraphRAG.</p>
-          <p style="margin-top: 10px; font-size: 13px;">Architecture write-up available on request.</p>
-        </div>
-
-        <div class="case-study">
-          <h3 style="color: var(--accent);">Agentic GraphRAG Copilot for Cross-Team Data Retrieval</h3>
-          <p>Reduced cross-team data retrieval time by ~82% by unifying search across documents, databases, and internal tools.</p>
-          <!-- <p style="margin-top: 10px; font-size: 13px;">[[FILL: repo/demo/write-up URL]]</p> -->
-          <p style="margin-top: 10px; font-size: 13px;">Architecture write-up available on request.</p>
-        </div>
-
-        <div class="case-study">
-          <h3 style="color: var(--accent);">All-in-One Agentic Platform for Managers</h3>
-          <p>Cut technology-adoption time from 6 weeks to 3 for managers adopting new tools, using a multi-agent platform for documentation, project data, and internal tools.</p>
-          <!-- <p style="margin-top: 10px; font-size: 13px;">[[FILL: repo/demo/write-up URL]]</p> -->
-          <p style="margin-top: 10px; font-size: 13px;">Architecture write-up available on request.</p>
-        </div>
-
-        <div class="case-study">
-          <h3 style="color: var(--accent);">Vision AI Agent for Jobsite Safety</h3>
-          <p>Saved ~15 hours/week for safety supervisors by automating visual inspection and incident triage on jobsites.</p>
-          <p style="margin-top: 10px; font-size: 13px;"><a href="https://www.youtube.com/watch?v=3Mo-gH-o2K8" target="_blank">View BuiltWorlds demo →</a></p>
-        </div>
-
-      </div>
+      <h2>Technical Fluency</h2>
+      <p class="lead">
+        Python/JS/TS/C++; Agentic AI &amp; Multi-agent systems, RAG, Knowledge Graphs &amp; Ontologies, LLMOps (evals, guardrails, tracing); LangGraph/LangChain/CrewAI, LangSmith, MCP, PostgreSQL, Redis, AWS/GCP/Azure, Docker; Google Vertex &amp; AI Studio, Microsoft Foundry, Palantir AIP
+      </p>
     </section>
 
     <!-- FEATURED VIDEOS -->
     <section>
-      <h2>Featured</h2>
+      <h2>Founder &amp; Public Proof</h2>
       <div class="featured-grid">
         <div class="featured-item">
           <p>BuiltWorlds AI Conference Pitch 2025</p>
@@ -449,7 +508,7 @@
     </section>
 
     <!-- TESTIMONIALS -->
-    <section>
+    <section id="contact">
       <h2>Client Recommendations</h2>
       <div class="testimonials">
         <div class="testimonial">
@@ -472,9 +531,9 @@
     <section>
       <div class="contact-section">
         <div class="contact-info">
-          <h2>Let's Talk</h2>
+          <h2>Have a workflow that is slow, expensive, or risky?</h2>
           <p class="lead">
-            If you are sitting on a slow, expensive process and you want someone who can diagnose the real problem, design the system, and ship it to production, let's talk.
+            I can help scope the opportunity, establish a baseline, and define a credible path to a production system your team can run.
           </p>
         </div>
         <form id="contact-form" action="https://formspree.io/f/mjkjvppy" method="POST" class="contact-form">
@@ -487,10 +546,21 @@
             <input type="email" id="email" name="email" required>
           </div>
           <div class="form-group">
+            <label for="topic">What would you like to improve?</label>
+            <select id="topic" name="topic">
+              <option value="">Select a workflow</option>
+              <option>Due diligence or research</option>
+              <option>Knowledge retrieval</option>
+              <option>Internal agent platform</option>
+              <option>AI delivery strategy</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
             <label for="message">Context</label>
             <textarea id="message" name="message" rows="4" placeholder="What are you working on?"></textarea>
           </div>
-          <button type="submit" class="cta">Send Message</button>
+          <button type="submit" class="cta">Start a discovery conversation</button>
         </form>
       </div>
     </section>
